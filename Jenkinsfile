@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('stage2') {
+      steps {
+        sh 'echo "Hello stage2 is running on `hostname`"'
+      }
+    }
+
   }
 }
