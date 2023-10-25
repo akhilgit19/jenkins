@@ -22,6 +22,13 @@ pipeline {
           }
         }
 
+        stage('stage2.2') {
+          steps {
+            sh '''echo "hello from stage 2.2"
+'''
+          }
+        }
+
       }
     }
 
