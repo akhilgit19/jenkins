@@ -8,8 +8,20 @@ pipeline {
     }
 
     stage('stage2') {
-      steps {
-        sh 'echo "Hello stage2 is running on `hostname`"'
+      parallel {
+        stage('stage2') {
+          steps {
+            sh 'echo "Hello stage2 is running on `hostname`"'
+          }
+        }
+
+        stage('stage2.1') {
+          steps {
+            sh '''echo "Hello from Stage2.1"
+'''
+          }
+        }
+
       }
     }
 
